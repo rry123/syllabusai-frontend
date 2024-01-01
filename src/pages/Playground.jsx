@@ -26,6 +26,36 @@ export default function Playground() {
         body: raw,
         redirect: 'follow'
         };
+        fetch("https://syllabus-ai.onrender.com/notes", requestOptions)
+        .then(response => response.json()) // Parse the response as JSON
+        .then(data => {
+            const content = data.data; // Extract content from the "data" field
+            console.log(content); 
+            const sanitizedHtml = DOMPurify.sanitize(content);
+            setContent(sanitizedHtml); // Set the content value to the variable
+            setisLoading(false)
+        })
+        .catch(error => console.log('error', error));
+
+      
+        
+    }
+
+    const handleTestRequest = () =>{
+        setisLoading(true)
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+        "syllabus": `${syllabusInput}`
+        });
+
+        var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+        };
         fetch("https://syllabus-ai.onrender.com/test", requestOptions)
         .then(response => response.json()) // Parse the response as JSON
         .then(data => {
@@ -60,10 +90,12 @@ export default function Playground() {
         <div className='flex flex-row items-center gap-2 w-full'>
         <button 
         className="btn btn-active"
-        onClick={handleNotesRequest}>
+        onClick={handleTestRequest}>
             <TestIcon/>
             Generate Test</button>
-        <button className="btn btn-active">
+        <button className="btn btn-active"
+         onClick={handleNotesRequest}
+        >
             <NotesIcon/>
              Generate Notes
              </button>
