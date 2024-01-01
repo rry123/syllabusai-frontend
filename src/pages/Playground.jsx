@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
 import NotesIcon from '../components/NotesIcon'
 import TestIcon from '../components/TestIcon'
-
-
+import LoadingBar from '../components/LoadingBar'
 
 
 export default function Playground() {
     const [syllabusInput, setsyllabusInput] = useState('')
     const [content, setContent] = useState('input syllabus to display content')
+    const [isLoading, setisLoading] = useState(false)
 
     const handleNotesRequest = () =>{
+        setisLoading(true)
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
@@ -29,12 +30,16 @@ export default function Playground() {
             const content = data.data; // Extract content from the "data" field
             console.log(content); // Optional: Log the content if needed
             setContent(content); // Set the content value to the variable
+            setisLoading(false)
         })
         .catch(error => console.log('error', error));
 
       
         
     }
+
+
+
 
   return (
     <div className='flex flex-col items-center  lg:w-4/12   p-1'>
@@ -64,7 +69,8 @@ export default function Playground() {
 
         <div>
             <p>
-                {content}
+                {isLoading ? <LoadingBar/> : content}
+                
             </p>
         </div>
 
