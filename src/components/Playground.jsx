@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import NotesIcon from '../components/NotesIcon'
-import TestIcon from '../components/TestIcon'
-import LoadingBar from '../components/LoadingBar'
+import NotesIcon from './NotesIcon'
+import TestIcon from './TestIcon'
+import LoadingBar from './LoadingBar'
 import DOMPurify from 'dompurify';
 import '../content.css'
 
@@ -82,8 +82,7 @@ export default function Playground() {
         </h2>
         <textarea className="textarea textarea-bordered" 
         placeholder="Add your syllabus here " 
-        onChange={(e)=> setsyllabusInput(e.target.value)
-        }>
+        onChange={(e)=> setsyllabusInput(e.target.value)}>
         {syllabusInput}
         </textarea>
 
@@ -94,8 +93,7 @@ export default function Playground() {
             <TestIcon/>
             Generate Test</button>
         <button className="btn btn-active"
-         onClick={handleNotesRequest}
-        >
+         onClick={handleNotesRequest}>
             <NotesIcon/>
              Generate Notes
              </button>
@@ -112,5 +110,6 @@ export default function Playground() {
 
     </div>
     </div>
+
   )
 }
