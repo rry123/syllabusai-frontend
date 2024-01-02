@@ -1,7 +1,7 @@
 import React from 'react'
-import Playground from './components/Playground'
-import HomePage from './pages/Home';
-import HistoryPage from './pages/HistoryPage'
+import Playground from '../components/Playground'
+import HomePage from '../pages/Home';
+import HistoryPage from '../pages/HistoryPage'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -9,6 +9,10 @@ import {
 const router = createBrowserRouter([
   {
     path: "/playground",
+    element: <HomePage></HomePage>,
+  },
+  {
+    path: "/",
     element: <HomePage></HomePage>,
   },
   {
