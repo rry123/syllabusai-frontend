@@ -2,9 +2,13 @@ import React from 'react'
 import TestIcon from './TestIcon'
 import NotesIcon from './NotesIcon'
 import Historyicon from './Historyicon'
+import { useNavigate } from 'react-router-dom'
 
 export default function Drawer({children}) {
+
+    const navigate = useNavigate()
   return (
+
     <div className="drawer">
   <input id="my-drawer" type="checkbox" className="drawer-toggle" />
   <div className="drawer-content">
@@ -17,9 +21,9 @@ export default function Drawer({children}) {
     <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
     <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base pt-28">
       {/* Sidebar content here */}
-      <li><a><TestIcon/>Generate Test</a></li>
+      <li><a ><TestIcon/>Generate Test</a></li>
       <li><a><NotesIcon/>Generate Notes</a></li>
-      <li><a><Historyicon/>History</a></li>
+      <li><a onClick={() => navigate('/history')}><Historyicon/>History</a></li>
       
     </ul>
   </div>
