@@ -1,6 +1,6 @@
 import React from 'react'
 import Playground from './components/Playground'
-import HomePage from './pages/homePage'
+import HomePage from './pages/Home';
 import HistoryPage from './pages/HistoryPage'
 import {
   createBrowserRouter,
