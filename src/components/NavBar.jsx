@@ -16,7 +16,7 @@ export default function NavBar({ children }) {
 
   const handleFetchUser = () => {
     // Assuming user.id is available from Clerk
-    fetch(`http://localhost:3000/user/?user_id=${user.id}`)
+    fetch(`https://syllabus-ai.onrender.com/user/?user_id=${user.id}`)
       .then(response => response.json())
       .then(data => {
         setCurrUser(data.user);
