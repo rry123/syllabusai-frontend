@@ -4,12 +4,13 @@ import TestIcon from './TestIcon'
 import LoadingBar from './LoadingBar'
 import DOMPurify from 'dompurify';
 import '../content.css'
-
+import { useUser } from '@clerk/clerk-react';
 
 export default function Playground() {
     const [syllabusInput, setSyllabusInput] = useState('')
     const [content, setContent] = useState('input syllabus to display content')
     const [isLoading, setisLoading] = useState(false)
+    const {user} = useUser()
 
     const handleNotesRequest = () =>{
         setisLoading(true)
@@ -47,7 +48,8 @@ export default function Playground() {
         myHeaders.append("Content-Type", "application/json");
 
         var raw = JSON.stringify({
-        "syllabus": `${syllabusInput}`
+        "syllabus": `${syllabusInput}`,
+        "user_id": `${user.id}`
         });
 
         var requestOptions = {
@@ -109,6 +111,7 @@ export default function Playground() {
             <NotesIcon/>
              Generate Notes
         </button>
+
 
         </div>
 

@@ -4,7 +4,8 @@ import NotesIcon from './NotesIcon'
 import Historyicon from './Historyicon'
 import { useNavigate } from 'react-router-dom'
 import { SignOutButton } from '@clerk/clerk-react'
-
+import SignOutIcon from './SignOutIcon'
+import { UserButton } from '@clerk/clerk-react'
 
 export default function Drawer({children}) {
 
@@ -21,15 +22,13 @@ export default function Drawer({children}) {
   </div> 
   <div className="drawer-side">
     <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-    <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base ">
+    <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base">
     <a className="btn btn-ghost text-xl mb-16" onClick={() => navigate('/playground')}>syllabus.ai</a>
       {/* Sidebar content here */}
       <li><a ><TestIcon/>Generate Test</a></li>
       <li><a><NotesIcon/>Generate Notes</a></li>
       <li><a onClick={() => navigate('/history')}><Historyicon/>History</a></li>
-      <li><a><SignOutButton afterSignOutUrl="/" /></a></li>
-      
-      
+      <a className='flex flex-row p-3 gap-2 btn btn-accent mt-auto'><SignOutIcon/><SignOutButton afterSignOutUrl="/" /></a>
     </ul>
   </div>
 </div>
