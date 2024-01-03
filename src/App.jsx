@@ -6,11 +6,12 @@ import { SignOutButton, SignInButton, SignedIn, SignedOut } from "@clerk/clerk-r
 
 import {
   createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import LandingPage from './pages/LandingPage';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/playground",
     element: <HomePage></HomePage>,
