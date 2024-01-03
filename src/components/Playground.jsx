@@ -7,7 +7,7 @@ import '../content.css'
 
 
 export default function Playground() {
-    const [syllabusInput, setsyllabusInput] = useState('')
+    const [syllabusInput, setSyllabusInput] = useState('')
     const [content, setContent] = useState('input syllabus to display content')
     const [isLoading, setisLoading] = useState(false)
 
@@ -71,6 +71,16 @@ export default function Playground() {
         
     }
 
+    const handleSyllabusChange = (e) => {
+        const inputValue = e.target.value;
+    
+        // Truncate the input to the maximum length (280 characters)
+        const truncatedValue = inputValue.slice(0, 280);
+    
+        // Update the state with the truncated value
+        setSyllabusInput(truncatedValue);
+      };
+
 
   return (
     <div className='flex flex-col items-center  lg:w-4/12   p-3'>
@@ -78,25 +88,27 @@ export default function Playground() {
         
 
        <h2 className="text-2xl font-bold leading-7 text-gray-300 sm:truncate sm:text-3xl sm:tracking-tight">
-         Generate 
+        Generate 
         </h2>
-        <textarea className="textarea textarea-bordered" 
-        placeholder="Add your syllabus here " 
-        onChange={(e)=> setsyllabusInput(e.target.value)}>
-        {syllabusInput}
-        </textarea>
-
+        <textarea
+        className="textarea textarea-bordered"
+        placeholder="Add your syllabus here"
+        onChange={handleSyllabusChange}
+        value={syllabusInput}
+      />
+      <p>{`${syllabusInput.length}/280 characters`}</p>
         <div className='flex flex-row items-center gap-2 w-full'>
         <button 
         className="btn btn-active"
         onClick={handleTestRequest}>
             <TestIcon/>
-            Generate Test</button>
+            Generate Test
+        </button>
         <button className="btn btn-active"
          onClick={handleNotesRequest}>
             <NotesIcon/>
              Generate Notes
-             </button>
+        </button>
 
         </div>
 
