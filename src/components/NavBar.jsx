@@ -36,7 +36,7 @@ export default function NavBar({ children }) {
       </div>
       <div className="flex-none">
         <div className="btn btn-square btn-ghost flex flex-row gap-1 mr-8">
-          <CoinsIcon/>{ currUser ? currUser.available_tokens : 29 }
+          <CoinsIcon/><span>{ currUser ? currUser.available_tokens : 29 }</span>
         </div>
       </div>
     </div>

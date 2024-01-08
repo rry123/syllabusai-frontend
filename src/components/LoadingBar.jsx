@@ -2,9 +2,15 @@ import React from 'react'
 
 export default function LoadingBar() {
   return (
-    <div className='flex flex-row items-center justify-center w-full'>
-        <span className="loading loading-dots loading-lg mr-3"></span>
-        <span>Loading</span>
+    <div className='flex flex-col items-start gap-3 justify-center w-full'>
+
+        <div className="skeleton h-4 w-1/2"></div>
+        <div className="skeleton h-4 w-3/4"></div>
+        <div className="skeleton h-4 w-full"></div>
+        <div className="skeleton h-4 w-full"></div>
+        <div className="skeleton h-4 w-full"></div>
+        <div className="skeleton h-4 w-full"></div>
+
     </div>
   )
 }

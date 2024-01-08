@@ -5,6 +5,8 @@ import LoadingBar from './LoadingBar'
 import DOMPurify from 'dompurify';
 import '../content.css'
 import { useUser } from '@clerk/clerk-react';
+import ReactMarkdown from 'react-markdown';
+
 
 export default function Playground() {
     const [syllabusInput, setSyllabusInput] = useState('')
@@ -12,13 +14,17 @@ export default function Playground() {
     const [isLoading, setisLoading] = useState(false)
     const {user} = useUser()
 
+    
+
+
     const handleNotesRequest = () =>{
         setisLoading(true)
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
         var raw = JSON.stringify({
-        "syllabus": `${syllabusInput}`
+        "syllabus": `${syllabusInput}`,
+        "user_id": `${user.id}`
         });
 
         var requestOptions = {
@@ -27,13 +33,12 @@ export default function Playground() {
         body: raw,
         redirect: 'follow'
         };
-        fetch("https://syllabus-ai.onrender.com/notes", requestOptions)
+        fetch("http://localhost:3000/notes", requestOptions)
         .then(response => response.json()) // Parse the response as JSON
         .then(data => {
             const content = data.data; // Extract content from the "data" field
             console.log(content); 
-            const sanitizedHtml = DOMPurify.sanitize(content);
-            setContent(sanitizedHtml); // Set the content value to the variable
+            setContent(content); // Set the content value to the variable
             setisLoading(false)
         })
         .catch(error => console.log('error', error));
@@ -58,13 +63,12 @@ export default function Playground() {
         body: raw,
         redirect: 'follow'
         };
-        fetch("https://syllabus-ai.onrender.com/test", requestOptions)
+        fetch("http://localhost:3000/test", requestOptions)
         .then(response => response.json()) // Parse the response as JSON
         .then(data => {
             const content = data.data; // Extract content from the "data" field
             console.log(content); 
-            const sanitizedHtml = DOMPurify.sanitize(content);
-            setContent(sanitizedHtml); // Set the content value to the variable
+            setContent(content); // Set the content value to the variable
             setisLoading(false)
         })
         .catch(error => console.log('error', error));
@@ -89,36 +93,38 @@ export default function Playground() {
     <div className='flex flex-col w-full gap-4'>
         
 
-       <h2 className="text-2xl font-bold leading-7 text-gray-300 sm:truncate sm:text-3xl sm:tracking-tight">
-        Generate 
-        </h2>
-        <textarea
-        className="textarea textarea-bordered"
-        placeholder="Add your syllabus here"
-        onChange={handleSyllabusChange}
-        value={syllabusInput}
-      />
-      <p>{`${syllabusInput.length}/280 characters`}</p>
+        <h2 className="text-2xl font-bold leading-7 text-gray-300 sm:truncate sm:text-3xl sm:tracking-tight">
+            Generate 
+            </h2>
+            <textarea
+            className="textarea textarea-bordered"
+            placeholder="Add your syllabus here"
+            onChange={handleSyllabusChange}
+            value={syllabusInput}
+        />
+        <p>{`${syllabusInput.length}/280 characters`}</p>
+
         <div className='flex flex-row items-center gap-2 w-full'>
-        <button 
-        className="btn btn-active"
-        onClick={handleTestRequest}>
-            <TestIcon/>
-            Generate Test
-        </button>
-        <button className="btn btn-active"
-         onClick={handleNotesRequest}>
-            <NotesIcon/>
-             Generate Notes
-        </button>
+
+            <button 
+            className="btn btn-active"
+            onClick={handleTestRequest}>
+                <TestIcon/>
+                Generate Test
+            </button>
+            <button className="btn btn-active"
+            onClick={handleNotesRequest}>
+                <NotesIcon/>
+                Generate Notes
+            </button>
 
 
         </div>
 
-        <div className='flex items-center justify-center w-full'>
+        <div className='flex items-center justify-center w-full  p-6 border-slate-700 border rounded-md'>
           
                 
-            {isLoading ? <LoadingBar/> : <div dangerouslySetInnerHTML={{ __html: content }}  className='flex flex-col gap-2 content'/>}
+            {isLoading ? <LoadingBar/> : <div className='flex flex-col gap-2 content'><ReactMarkdown>{content}</ReactMarkdown></div>}
                 
  
         </div>

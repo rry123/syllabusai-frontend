@@ -7,8 +7,20 @@
 
     h1, h2 , h3 {
        color: rgb(226 232 240);
+       font-weight: bold;
         padding-top: 10px
     }
+    h1 {
+        font-size: 2em; /* 2 times the base font size of the document */
+      }
+      
+      h2 {
+        font-size: 1.5em; /* 1.5 times the base font size of the document */
+      }
+      
+      h3 {
+        font-size: 1.2em; /* 1.2 times the base font size of the document */
+      }
 
     a{
         color: #00cfbd;
