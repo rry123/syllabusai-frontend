@@ -45,6 +45,7 @@ export default function Playground() {
                 console.log(content);
                 setContent(content); // Set the content value to the variable
                 setisLoading(false)
+                setDownloadable(true)
             })
             .catch(error => console.log('error', error));
 
