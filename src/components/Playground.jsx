@@ -2,23 +2,16 @@ import React, { useRef, useState } from 'react'
 import NotesIcon from './NotesIcon'
 import TestIcon from './TestIcon'
 import LoadingBar from './LoadingBar'
-import DOMPurify from 'dompurify';
 import '../content.css'
 import { useUser } from '@clerk/clerk-react';
 import ReactMarkdown from 'react-markdown';
-import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
 
 
 export default function Playground() {
     const [syllabusInput, setSyllabusInput] = useState('')
     const [content, setContent] = useState('input syllabus to display content')
     const [isLoading, setisLoading] = useState(false)
-    const [DownloadStatus,setDownloadable] = useState(false)
     const { user } = useUser()
-    const myRef = useRef(null)
-
-
 
 
     const handleNotesRequest = () => {
@@ -95,18 +88,7 @@ export default function Playground() {
         setSyllabusInput(truncatedValue);
     };
 
-    const handleDownload = () => {
-        const sanitizedContent = DOMPurify.sanitize(myRef.current.innerHTML);
-        console.log(sanitizedContent);
-        const input =sanitizedContent;
-        console.log(input);
-    
-        html2canvas(input).then((canvas) => {
-          const pdf = new jsPDF('p', 'mm', 'a4');
-          pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 210, 297);
-          pdf.save('downloaded-pdf.pdf');
-        });
-      };
+
 
 
     return (
@@ -145,13 +127,13 @@ export default function Playground() {
                 <div className='flex items-center justify-center w-full  p-6 border-slate-700 border rounded-md'>
 
 
-                    {isLoading ? <LoadingBar /> : <div className='flex flex-col gap-2 content' ref={myRef}><ReactMarkdown>{content}</ReactMarkdown></div>}
+                    {isLoading ? <LoadingBar /> : <div className='flex flex-col gap-2 content'><ReactMarkdown>{content}</ReactMarkdown></div>}
 
 
                 </div>
 
             
-                {DownloadStatus ? <button className="btn width:20rem" onClick={handleDownload}>download</button> : <></>}   
+                 
                 
 
 

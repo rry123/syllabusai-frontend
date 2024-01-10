@@ -42,11 +42,12 @@ export default function HistoryPage() {
 
         <div className='w-full flex flex-col items-center py-8 gap-3 sm:px-2'>
           {/* Map through the 'history' state to display the posts */}
-          {history.map((post, index) => (
+          {history.map((post) => (
             <HistoryCard
               key={post.syllabus} // Make sure to set a unique key for each item in the list
               title={post.syllabus} // Adjust based on your actual post structure
               tag={post.type} // Adjust based on your actual post structure
+              response={post.response}
             />
           ))}
         </div>
