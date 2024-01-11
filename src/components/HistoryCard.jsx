@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
+import '../content.css'
 
 export default function HistoryCard({ title, tag,response}) {
   const [contentStatus,setstatus] = useState(false);
@@ -18,7 +19,7 @@ export default function HistoryCard({ title, tag,response}) {
         <div className="card-actions justify-start">
           <button className="btn btn-accent btn-sm" onClick={setbutton}>{buttonName}</button>
         </div>
-        {contentStatus ?<div> <ReactMarkdown>{response}</ReactMarkdown> </div>: <></>}
+        {contentStatus ?<div className='content'> <ReactMarkdown>{response}</ReactMarkdown> </div>: <></>}
       </div>
     </div>
   )
