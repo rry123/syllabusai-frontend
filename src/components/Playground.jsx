@@ -16,7 +16,7 @@ export default function Playground() {
 
     const handleNotesRequest = () => {
         setisLoading(true)
-        setDownloadable(false)
+    
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
@@ -38,7 +38,7 @@ export default function Playground() {
                 console.log(content);
                 setContent(content); // Set the content value to the variable
                 setisLoading(false)
-                setDownloadable(true)
+   
             })
             .catch(error => console.log('error', error));
 
@@ -48,7 +48,7 @@ export default function Playground() {
 
     const handleTestRequest = () => {
         setisLoading(true)
-        setDownloadable(false)
+
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
@@ -70,7 +70,7 @@ export default function Playground() {
                 console.log(content);
                 setContent(content); // Set the content value to the variable
                 setisLoading(false);
-                setDownloadable(true);
+  
             })
             .catch(error => console.log('error', error));
 
