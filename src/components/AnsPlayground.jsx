@@ -61,7 +61,7 @@ export default function AnsPlayground() {
 
 
     return (
-        <div className='flex flex-col items-center  lg:w-4/12   p-3'>
+        <div className='flex flex-col items-center  lg:w-4/12   p-3 w-full'>
             <div className='flex flex-col w-full gap-4'>
 
 
