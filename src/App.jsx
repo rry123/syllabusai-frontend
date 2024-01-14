@@ -10,6 +10,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import LandingPage from './pages/LandingPage';
+import AnswerPage from './pages/AnswerPage';
+import AnalysePage from './pages/AnalysePage';
 
 const router = createHashRouter([
   {
@@ -23,6 +25,14 @@ const router = createHashRouter([
   {
     path: "/history",
     element: <HistoryPage/>,
+  },
+  {
+    path: "/answer",
+    element: <AnswerPage/>,
+  },
+  {
+    path: "/analyse",
+    element: <AnalysePage/>,
   },
   {
   path:"*",
