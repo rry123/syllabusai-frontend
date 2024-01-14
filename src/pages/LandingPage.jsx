@@ -22,7 +22,6 @@ export default function LandingPage() {
      
      <div className='flex flex-row gap-5 justify-center'>
       <button className="btn btn-accent"><SignUpButton/></button>
-      <button className="btn btn-accent">About us</button>
       </div>
     </div>
   </div>
