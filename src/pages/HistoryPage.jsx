@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NavBar from '../components/NavBar';
 import HistoryCard from '../components/HistoryCard';
 import { useUser } from '@clerk/clerk-react';
+import Footer from '../components/Footer';
 
 export default function HistoryPage() {
   const [history, setHistory] = useState([]);
@@ -52,6 +53,7 @@ export default function HistoryPage() {
           ))}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

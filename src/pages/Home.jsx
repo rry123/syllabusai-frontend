@@ -2,6 +2,7 @@ import React from 'react'
 import Playground from '../components/Playground'
 import NavBar from '../components/NavBar'
 import Drawer from '../components/Drawer'
+import Footer from '../components/Footer'
 
 
 
@@ -13,7 +14,7 @@ export default function HomePage() {
         <NavBar></NavBar>
         <Playground></Playground>
     
-        
+        <Footer/>
 
     </div>
   )
