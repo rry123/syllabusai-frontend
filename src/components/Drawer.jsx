@@ -29,8 +29,8 @@ export default function Drawer({children}) {
     <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base">
     <a className="btn btn-ghost text-xl mb-16" onClick={() => navigate('/playground')}>syllabus.ai</a>
       {/* Sidebar content here */}
-      <li><a ><TestIcon/>Generate Test</a></li>
-      <li><a onClick={() => navigate('/home')}><NotesIcon/>Generate Notes</a></li>
+      <li><a  onClick={() => navigate('/')} ><TestIcon/>Generate Test</a></li>
+      <li><a onClick={() => navigate('/')}><NotesIcon/>Generate Notes</a></li>
       <li><a onClick={() => navigate('/answer')}><AnswerIcon/>Generate Answer</a></li>
       <li><a onClick={() => navigate('/analyse')}><AnalyseIcon/>Analyse Syllabus</a></li>
       <li><a onClick={() => navigate('/history')}><Historyicon/>History</a></li>
