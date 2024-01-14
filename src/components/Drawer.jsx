@@ -16,7 +16,7 @@ export default function Drawer({children}) {
     const { user } = useUser()
   return (
 
-    <div className="drawer">
+    <div className="drawe z-50">
   <input id="my-drawer" type="checkbox" className="drawer-toggle" />
   <div className="drawer-content">
     {children} 
