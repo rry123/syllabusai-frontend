@@ -31,7 +31,7 @@ export default function AnsPlayground() {
             body: raw,
             redirect: 'follow'
         };
-        fetch("http://localhost:3000/ans", requestOptions)
+        fetch("https://syllabus-ai.onrender.com/ans", requestOptions)
             .then(response => response.json()) // Parse the response as JSON
             .then(data => {
                 const content = data.data; // Extract content from the "data" field

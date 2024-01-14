@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
   return (
-<footer className="footer footer-center p-6 bg-base-300 text-base-content">
+<footer className="footer footer-center p-6 bg-base-300 text-base-content fixed bottom-0">
   <aside>
     <p>Crafted with ❤️ by 
         <a href="https://github.com/bprathamesh20" className='underline ml-2' target="_blank">Prathamesh</a>  and 
