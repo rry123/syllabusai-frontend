@@ -25,4 +25,8 @@
      a{
         color: #00cfbd;
     }
+
+    strong{
+      color: rgb(226 232 240);
+    }
 } 

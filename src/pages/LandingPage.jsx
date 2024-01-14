@@ -1,36 +1,42 @@
 import React from 'react'
 import NavBar from '../components/NavBar'
-import { SignInButton } from '@clerk/clerk-react'
+import { SignInButton, SignUpButton } from '@clerk/clerk-react'
 import BrowserMock from '../components/BrowserMock'
+import LandingNav from '../components/LandingNav'
+import workingVideo from '../assets/working.gif'
+import Footer from '../components/Footer'
+import '../App.css'
+
+import Features from '../components/Features'
+SignUpButton
 
 export default function LandingPage() {
   return (
-    <>
- <div className="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-16 lg:py-24 my-auto">
-  <div className="flex w-full mx-auto text-left">
-    <div className="relative inline-flex items-center mx-auto align-middle">
-      <div className="text-center">
-        <h1 className=" text-2xl font-bold leading-none tracking-tighter md:text-5xl lg:text-6xl lg:max-w-7xl">
-          <span className='text-accent'>All-In-One-tool</span> <br className="hidden lg:block" />
-            for exam preprations
-        </h1>
-        <p className=" mx-auto mt-8 text-base leading-relaxed text-gray-500">Empower your study sessions with our AI-driven platform! Effortlessly generate tests, organize notes, and elevate your learning experience to ace every subject.</p>
-        <div className="flex justify-center w-full gap-2 mx-auto mt-6">
-          <div className="mt-3 rounded-lg sm:mt-0">
-            <SignInButton  className='btn btn-accent' />
-          </div>
-          <div className="mt-3 rounded-lg sm:mt-0 sm:ml-3">
-            <button className="btn btn-outline">See features</button>
-          </div>
-        </div>
-        <BrowserMock></BrowserMock>
+    <div className='flex flex-col screen bg-base-100'>
+    <LandingNav></LandingNav>
+    <div className="hero ">
+  <div className="hero-content text-center">
+    <div className="max-w-md">
+      <h1 className="text-5xl font-bold"> <span className='block text-accent'>All-in-one </span>tool for exam prep</h1>
+      <p className="py-6">Empower your study sessions with our AI-driven platform! Effortlessly generate tests, organize notes, and elevate your learning experience to ace every subject.</p>
+     
+     <div className='flex flex-row gap-5 justify-center'>
+      <button className="btn btn-accent"><SignUpButton/></button>
+      <button className="btn btn-accent">About us</button>
       </div>
     </div>
   </div>
 </div>
+<div className='flex justify-center'>
+
+    <img src={workingVideo} className='rounded-md shadow-md shadow-neutral'></img>
+</div>
+  <Features></Features>
 
 
-    </>
+    <Footer></Footer>
+
+    </div>
   )
 }
 
