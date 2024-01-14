@@ -65,7 +65,7 @@ export default function AnalysePlayground() {
             <div className='flex flex-col w-full gap-4'>
 
 
-                <h2 className="text-2xl font-bold leading-7 text-gray-300 sm:truncate sm:text-3xl sm:tracking-tight">
+                <h2 className="text-2xl font-bold leading-7  sm:truncate sm:text-3xl sm:tracking-tight">
                     Analyse syllabus
                 </h2>
                 <textarea

@@ -5,7 +5,7 @@
         list-style-type: disc;
     }
 
-    h1, h2 , h3 {
+    h1, h2 , h3{
        color: rgb(226 232 240);
        font-weight: bold;
         padding-top: 10px
@@ -30,3 +30,15 @@
       color: rgb(226 232 240);
     }
 } 
+
+@media (prefers-color-scheme: light) {
+  .content{
+  h1, h2 , h3, .dark-color  {
+    color: #1F2937;
+
+ }
+  strong{
+    color: #1F2937;
+  }
+}
+}
