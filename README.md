@@ -11,9 +11,8 @@ I'm thrilled to introduce syllabus.ai, a revolutionary platform designed to supe
 Ever wished for a study companion that effortlessly generates notes, quizzes, and answers? Look no further! Syllabus.ai does just that! 📚✏️ Let AI simplify your study routine.
 
 🌟 Key Features:
-📝 Effortless note generation.
-📋 Personalized test creation.
-🤖 Instant AI-generated answers.
+-📝 Effortless note generation.
+-📋 Personalized test creation.
+-🤖 Instant AI-generated answers.
 
-💡 Why Share This Here?
-As aspiring developers, your insights are gold! Dive into Syllabus.ai, share your thoughts, and help us refine the future of smart studying. Let's shape the next level of education together! 🚀 #EdTech #LearningInPublic #StudySmart
+
