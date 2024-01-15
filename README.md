@@ -1,8 +1,19 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Exciting Update! Unveiling Syllabus.ai - Your Smart Study Sidekick! 🎉
 
-Currently, two official plugins are available:
+Hey Everyone! 👋
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I'm thrilled to introduce syllabus.ai, a revolutionary platform designed to supercharge your study sessions with AI magic! 🧠✨
+
+🌐 Check it out here:  https://syllabusai-frontend.vercel.app/
+
+🔥 What's Syllabus.ai?
+Ever wished for a study companion that effortlessly generates notes, quizzes, and answers? Look no further! Syllabus.ai does just that! 📚✏️ Let AI simplify your study routine.
+
+🌟 Key Features:
+📝 Effortless note generation.
+📋 Personalized test creation.
+🤖 Instant AI-generated answers.
+
+💡 Why Share This Here?
+As aspiring developers, your insights are gold! Dive into Syllabus.ai, share your thoughts, and help us refine the future of smart studying. Let's shape the next level of education together! 🚀 #EdTech #LearningInPublic #StudySmart
